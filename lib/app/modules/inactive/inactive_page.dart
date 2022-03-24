@@ -10,16 +10,27 @@ class InactivePage extends GetView<InactiveController> {
    
    @override
    Widget build(BuildContext context) {
-       return Scaffold(
+
+       print('bbbbb '+controller.inactives.length.toString()) ;
+
+       return Scaffold(         
            appBar: AppBar(title: const Text('InactivePage'),),
-           body: Container(
+           body: SizedBox(
              width: double.infinity,
+             height: double.infinity,
              child: Obx(() => ListView.builder(
                itemCount: controller.inactives.length,
                itemBuilder: (_,index){
-                 return ItemList(texto: controller.inactives[index].nome_aluno);
-               }),
-           )),
+                  return ItemList(inactive: controller.inactives[index]);
+               }                              
+             ),),
+           ),
        );
   }
 }
+
+/*ListView.builder(
+               itemCount: controller.inactives.length,
+               itemBuilder: (_,index){
+                 return Text(controller.inactives[index].nome_aluno);
+               }),*/
