@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class ItemList extends StatelessWidget {
 
-  ItemList({required Inactive inactive, Key? key }) 
+  ItemList({required Inactive inactive, Key? key })
   : 
   _inactive = inactive,
   super(key: key);
@@ -13,45 +13,47 @@ class ItemList extends StatelessWidget {
 
    @override
    Widget build(BuildContext context) {
-       return Card(
-         child: Column(           
-           children: [
-             Row(
-               children: [
-                 Column(
-                   children: [
-                     const Text('NÚMERO DO INATIVO'),
-                      Text(_inactive.codigo, style: const TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                   ],
-                 ),
-                 const SizedBox(width: 10,),
-                 Column(
-                   mainAxisAlignment: MainAxisAlignment.start,
-                   children: [
-                     Row(
-               children: [
-                 const Text('NOME DO ALUNO:'),
-                 const SizedBox(width: 8,),
-                 Text(_inactive.nome_aluno),
-               ],
-             ),
-             Row(
-                                 mainAxisAlignment: MainAxisAlignment.start,
+       return SizedBox(
+         child: Card(
+           child: Column(
+             children: [
+               Row(
+                 children: [
+                   Column(
+                     children: [
+                       const Text('NÚMERO DO INATIVO'),
+                        Text(_inactive.codigo, style: const TextStyle(
+                          fontSize: 35,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                     ],
+                   ),
+                   const SizedBox(width: 10,),
+                   Column(
+                     mainAxisAlignment: MainAxisAlignment.start,
+                     children: [
+                       Row(
+                 children: [
+                   const Text('NOME DO ALUNO:'),
+                   const SizedBox(width: 8,),
+                   Text(_inactive.nome_aluno),
+                 ],
+               ),
+               Row(
+                                   mainAxisAlignment: MainAxisAlignment.start,
 
-               children: [
-                 const Text('DATA DE NASCIMENTO: '),
-                 const SizedBox(width: 8,),
-                 Text(_inactive.dt_nascimento),
-               ],
-             )
-                   ],
-                 )
-               ],
-             ),             
-           ],
+                 children: [
+                   const Text('DATA DE NASCIMENTO: '),
+                   const SizedBox(width: 8,),
+                   Text(_inactive.dt_nascimento),
+                 ],
+               )
+                     ],
+                   )
+                 ],
+               ),
+             ],
+           ),
          ),
        );
   }

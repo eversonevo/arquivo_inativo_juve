@@ -14,14 +14,22 @@ class InactivePage extends GetView<InactiveController> {
        print('bbbbb '+controller.inactives.length.toString()) ;
 
        return Scaffold(         
-           appBar: AppBar(title: const Text('InactivePage'),),
+           appBar: AppBar(title: const Text('InactivePage',),
+           actions: [
+             IconButton(onPressed: controller.search, icon: const Icon(Icons.search)),
+           ],),
            body: SizedBox(
-             width: double.infinity,
-             height: double.infinity,
+             //width: double.infinity,
+             //height: double.infinity,
              child: Obx(() => ListView.builder(
                itemCount: controller.inactives.length,
                itemBuilder: (_,index){
-                  return ItemList(inactive: controller.inactives[index]);
+                  return SizedBox(
+                    width: 50,
+                    child: Padding(                      
+                      padding: const EdgeInsets.all(2.0),
+                      child: ItemList(inactive: controller.inactives[index]),
+                    ));
                }                              
              ),),
            ),
